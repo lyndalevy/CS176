@@ -1,0 +1,43 @@
+package lynda;
+import java.util.Scanner;
+public class Lynda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Enter your name: ");
+		String name = sc.nextLine();
+		System.out.print("Enter your score or 'Finish' to exit: ");
+		
+		String input = sc.nextLine();
+		char grade; 
+		String feedback;
+		while(!input.equals("Finish")) {
+			int score=Integer.parseInt(input);
+			
+		if(score>=90) {grade='A';}
+		else if (score>=80) {grade='B';}
+		else if (score>=70) {grade='C';}
+		else if (score>=60) {grade='D';}
+		else {grade='F';}
+		
+		if(score>=90) {feedback="Excellent work, you're almost perfect.";}
+		else if (score>=80) {feedback="Great job, but you can still improve.";}
+		else if (score>=70) {feedback="Fair effort, but there's room for growth.";}
+		else if (score>=60) {feedback="You're close to failing. Be careful!";}
+		else {feedback="You failed, but you're not far from passing.";}
+		
+		System.out.println(name+", your grade is: "+grade);
+		System.out.println(feedback);
+		System.out.print("Enter your score or 'Finish' to exit: ");
+		
+		 input = sc.nextLine();
+		}//while
+		sc.close();
+		System.out.println("Program finished");
+		
+	}
+
+}
